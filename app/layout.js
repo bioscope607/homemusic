@@ -81,6 +81,9 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: 'jSGqnhHGOXSicllccLMrNPE2ioTsAZcT6_zt5rbCWfg',
+  },
   other: {
     'geo.region': 'IN-WB',
     'geo.placename': 'Burnpur, Asansol, Paschim Bardhaman',
