@@ -3,7 +3,7 @@ import { getCourses, getPosts } from '../lib/api';
 export const dynamic = 'force-static';
 
 export default async function sitemap() {
-  const b = process.env.NEXT_PUBLIC_SITE_URL || 'https://homemusictuition.com';
+  const b = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.homemusictuition.in';
   const now = new Date();
 
   const coreRoutes = [

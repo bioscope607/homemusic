@@ -7,7 +7,7 @@ import Effects from '../components/Effects';
 // next/font self-hosts the fonts at build time: no external font requests, no layout shift.
 const head = Fraunces({ subsets: ['latin'], variable: '--font-head', display: 'swap' });
 const body = DM_Sans({ subsets: ['latin'], variable: '--font-body', display: 'swap', weight: ['400', '500', '700'] });
-const url = process.env.NEXT_PUBLIC_SITE_URL || 'https://homemusictuition.com';
+const url = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.homemusictuition.in';
 
 export const metadata = {
   metadataBase: new URL(url),
