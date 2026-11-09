@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Effects from '../components/Effects';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // next/font self-hosts the fonts at build time: no external font requests, no layout shift.
 const head = Fraunces({ subsets: ['latin'], variable: '--font-head', display: 'swap' });
@@ -156,6 +157,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <Effects />
         <Analytics />
+        <SpeedInsights />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
       </body>
     </html>
