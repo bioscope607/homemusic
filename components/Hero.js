@@ -38,36 +38,28 @@ export default function Hero({ slides }) {
 
         vid.addEventListener('ended', handleEnded, { once: true });
 
-        const dur = (vid.duration && !isNaN(vid.duration) && vid.duration > 0)
-          ? (vid.duration * 1000) + 400
-          : 31000;
+        // Play 0:00 to 0:04 (4 seconds), then advance to the next slide
+        const dur = 4000;
 
         timer = setTimeout(() => {
           go(i + 1);
         }, dur);
 
-        const hasTitle = Boolean(slides[i]?.title);
-  const fallbackTitle = slides[slides.length - 1]?.title || slides.find((s) => s.title)?.title || '';
-
-  return () => {
+        return () => {
           vid.removeEventListener('ended', handleEnded);
           clearTimeout(timer);
+          vid.pause();
         };
       } else {
-        timer = setTimeout(() => go(i + 1), 31000);
-        const hasTitle = Boolean(slides[i]?.title);
-  const fallbackTitle = slides[slides.length - 1]?.title || slides.find((s) => s.title)?.title || '';
-
-  return () => clearTimeout(timer);
+        timer = setTimeout(() => go(i + 1), 4000);
+        return () => clearTimeout(timer);
       }
     } else {
       timer = setTimeout(() => {
         go(i + 1);
       }, 6500);
-      const hasTitle = Boolean(slides[i]?.title);
-  const fallbackTitle = slides[slides.length - 1]?.title || slides.find((s) => s.title)?.title || '';
 
-  return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
     }
   }, [i, n, slides, go]);
 
